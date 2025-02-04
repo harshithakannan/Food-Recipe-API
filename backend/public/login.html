@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styled.css">
+    <style>
+        /* Your CSS here */
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="http://localhost:3000/">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html" class="active">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="form-container">
+            <h1>Login</h1>
+            <form action="/login" method="POST" onsubmit="return validateForm()">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </section>
+    <script>
+        function validateForm() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            
+            if (username === "" || password === "") {
+                alert("Both fields are required.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
